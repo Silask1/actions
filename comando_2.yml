@@ -1,0 +1,11 @@
+name: Comando 2
+
+on:
+  workflow_call:
+        
+jobs:
+  segundo_comando:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "segundo comando"
+        run: echo "Executando Comando 2"
