@@ -1,0 +1,22 @@
+name: Comando 1
+
+on:
+  workflow_call:
+    inputs:
+      username: 
+        required: true
+        type: string
+        description: Username de input
+      password:
+        required: true
+        type: string
+        description: Password de Input
+        
+jobs:
+  primeiro_comando:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "primeiro comando - Username"
+        run: echo "Username -> ${{inputs.username}}"
+      - name: "primeiro comando - Password" 
+        run: echo "Password -> ${{inputs.password}}"
