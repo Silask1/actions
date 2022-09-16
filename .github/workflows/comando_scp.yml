@@ -1,0 +1,29 @@
+name: Comando SCP
+
+on:
+  workflow_call:
+    inputs:
+      source:
+        required: true
+        type: string
+        description: Lista de Arquivos para copiar
+      target:
+        required: true
+        type: string
+        description: Diretório de desinto do Servidor
+        
+jobs:
+  Execute_SCP:
+    name: Execute SCP
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Copiar arquivos via SSH
+        uses: appleboy/scp-action@master
+        with:
+          host: 20.120.4.78
+          username: tqssolucoes
+          password: Usrtqs8774636
+          source: ${{ inputs.source }}
+          target: ${{ inputs.target }}
+          debug: true
